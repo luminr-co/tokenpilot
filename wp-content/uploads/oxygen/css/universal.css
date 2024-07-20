@@ -488,6 +488,72 @@ padding-left: 20px;
 					margin: 0 !important;
 				}
 			}
+.oxel_logo_slider {
+ width:100%;
+ position:relative;
+ overflow:hidden;
+ background-color:rgba(255,255,255,0);
+ text-align:center;
+}
+.oxel_logo_slider:not(.ct-section):not(.oxy-easy-posts),
+.oxel_logo_slider.oxy-easy-posts .oxy-posts,
+.oxel_logo_slider.ct-section .ct-section-inner-wrap{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+.oxel_logo_slider__logo {
+ transition-duration:0.3s;
+ transition-timing-function:ease-in-out;
+ text-align:center;
+ padding-top:0px;
+ padding-left:0.75rem;
+ padding-right:0.75rem;
+ padding-bottom:0px;
+ min-width:12.625rem;
+ width:10%;
+ height:auto;
+}
+.oxel_logo_slider__logo:not(.ct-section):not(.oxy-easy-posts),
+.oxel_logo_slider__logo.oxy-easy-posts .oxy-posts,
+.oxel_logo_slider__logo.ct-section .ct-section-inner-wrap{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+}
+.oxel_logo_slider__image_carrier {
+ flex-shrink:0;
+ transition-duration:0.1s;
+ transition-timing-function:linear;
+ background-color:rgba(255,255,255,0);
+ text-align:left;
+ width:100%;
+ gap:0rem;
+}
+.oxel_logo_slider__image_carrier:not(.ct-section):not(.oxy-easy-posts),
+.oxel_logo_slider__image_carrier.oxy-easy-posts .oxy-posts,
+.oxel_logo_slider__image_carrier.ct-section .ct-section-inner-wrap{
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:flex-start;
+gap:0rem;
+}
+.oxel_logo_slider__image_carrier--delay {
+}
+.oxel_dynamicslider {
+ width:100%;
+}
+.swiper-container {
+}
+.oxel_dynamicslider__container {
+ height:400px;
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
 .oxel_megamenu_parent:hover{
  background-color:#cfd3d7;
 }
@@ -586,6 +652,56 @@ color: var(--white, #F0F0F0); font-family: Raleway; font-size: 0.875rem; font-st
 .bento_content_block.oxy-easy-posts .oxy-posts,
 .bento_content_block.ct-section .ct-section-inner-wrap{
 gap:1.38rem;
+}
+.luminr-wrapper {
+ position:relative;
+ height:3.87263rem;
+ width:100%;
+overflow: hidden; mask-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) );
+}
+.luminr-item {
+ width:11.125rem;
+ height:3.87263rem;
+ position:absolute;
+ background-color:rgba(0,0,0,0);
+}
+.item1 {
+}
+.item2 {
+}
+.item3 {
+}
+.item4 {
+}
+.item5 {
+}
+.item6 {
+}
+.item7 {
+}
+.item8 {
+}
+.item9 {
+}
+.item10 {
+}
+.item11 {
+}
+.item12 {
+}
+.item13 {
+}
+.item14 {
+}
+.item15 {
+}
+.item16 {
+}
+.item17 {
+}
+.launchpad {
+}
+.dex {
 }
 :root {
   --rich-black: #020E18;
