@@ -789,6 +789,12 @@ gap:1.41rem;
  background-color:#07212a;
  border-radius:0.75rem;
 }
+.smooth-hover-link:hover{
+}
+.smooth-hover-link {
+}
+.testimonials {
+}
 :root {
   --rich-black: #020E18;
 }
@@ -829,7 +835,20 @@ letter-spacing: 0.1875rem;
     font-size:2rem;
     
   }
-}.cred_card_bg {
+}
+
+
+/* Base styles for links */
+.ct-link-text.smooth-hover-link {
+  text-decoration: none;
+  transition: color 0.3s ease-out; /* Smooth transition */
+}
+
+/* Hover state for links */
+.ct-link-text.smooth-hover-link:hover {
+  color: #88D498 !important; /* Hover color */
+}
+.cred_card_bg {
   border-radius: 1rem;
 background: radial-gradient(499.85% 76.19% at 50% 50%, #0A3D4E 8%, #07212A 68.27%);
 }
