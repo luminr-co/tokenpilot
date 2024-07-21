@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments for Token Pilot	</title>
-	<atom:link href="/tokenpilot/comments/feed/" rel="self" type="application/rss+xml" />
-	<link>/tokenpilot/</link>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description></description>
 	<lastBuildDate>Thu, 18 Jul 2024 20:51:37 +0000</lastBuildDate>
 	<sy:updatePeriod>

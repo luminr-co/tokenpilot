@@ -615,10 +615,22 @@ display:flex;
 
 .spacey_title {
 }
+@media (max-width: 991px) {
+.spacey_title {
+}
+}
+
 .tp_h2 {
  width:100%;
  max-width:62.25rem;
 }
+@media (max-width: 767px) {
+.tp_h2 {
+ font-size:2rem;
+ line-height:normal;
+}
+}
+
 .bento_block_bg:after{
   content:"";
 }
@@ -653,12 +665,32 @@ color: var(--white, #F0F0F0); font-family: Raleway; font-size: 0.875rem; font-st
 .bento_content_block.ct-section .ct-section-inner-wrap{
 gap:1.38rem;
 }
+@media (max-width: 1120px) {
+.bento_content_block {
+}
+}
+
+@media (max-width: 991px) {
+.bento_content_block {
+ padding-left:1.73rem;
+ padding-top:1.25rem;
+ padding-right:1.8rem;
+ padding-bottom:1.63rem;
+}
+}
+
 .luminr-wrapper {
  position:relative;
  height:3.87263rem;
  width:100%;
 overflow: hidden; mask-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) );
 }
+@media (max-width: 991px) {
+.luminr-wrapper {
+overflow: hidden; mask-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) );
+}
+}
+
 .luminr-item {
  width:11.125rem;
  height:3.87263rem;
@@ -723,6 +755,40 @@ overflow: hidden; mask-image: linear-gradient( to right, rgba(0, 0, 0, 0), rgba(
 }
 .hover-div-2 {
 }
+.scrollable-container {
+ gap:1.41rem;
+overflow:hidden;
+}
+.scrollable-container:not(.ct-section):not(.oxy-easy-posts),
+.scrollable-container.oxy-easy-posts .oxy-posts,
+.scrollable-container.ct-section .ct-section-inner-wrap{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:1.41rem;
+}
+@media (max-width: 991px) {
+.scrollable-container {
+overflow:hidden;
+}
+}
+
+.testi_row {
+ gap:1.41rem;
+}
+.testi_row:not(.ct-section):not(.oxy-easy-posts),
+.testi_row.oxy-easy-posts .oxy-posts,
+.testi_row.ct-section .ct-section-inner-wrap{
+display:flex;
+flex-direction:row;
+gap:1.41rem;
+}
+.testimonial_card {
+ width:17.625rem;
+ height:20.75rem;
+ background-color:#07212a;
+ border-radius:0.75rem;
+}
 :root {
   --rich-black: #020E18;
 }
@@ -750,7 +816,26 @@ font-size: 2.5rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+}
+
+@media (max-width: 992px) {
+  .spacey_title {
+font-size: 0.75rem;
+letter-spacing: 0.1875rem;
+    
+}
+
+  .tp_h2 {
+    font-size:2rem;
+    
+  }
 }.cred_card_bg {
   border-radius: 1rem;
 background: radial-gradient(499.85% 76.19% at 50% 50%, #0A3D4E 8%, #07212A 68.27%);
+}
+
+@media (max-width: 992px) {
+.hero-logo-image {
+  width: 47.85px;
+}
 }
