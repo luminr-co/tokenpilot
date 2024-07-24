@@ -31,8 +31,8 @@
 @font-face{font-family:Cardo;font-style:italic;font-weight:400;font-display:fallback;src:url('/tokenpilot/wp-content/themes/oxygen-is-not-a-theme/assets/fonts/cardo/cardo_italic_400.woff2') format('woff2');}
 @font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:fallback;src:url('/tokenpilot/wp-content/themes/oxygen-is-not-a-theme/assets/fonts/cardo/cardo_normal_700.woff2') format('woff2');}</style>
 <link rel="stylesheet" id="oxygen-cache-29-css" href="/tokenpilot/wp-content/uploads/oxygen/css/29.css?cache=1721578995#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721832093#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721832092#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721849931#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721849931#038;ver=6.6.1" media="all">
 <!-- END OF WP_HEAD() -->
 </head>
 <body class="home page-template-default page page-id-23 wp-embed-responsive  oxygen-body">
@@ -404,10 +404,11 @@
 <h1 id="headline-294-23" class="ct-headline">Verify Telegram Account</h1>
 <div id="text_block-296-23" class="ct-text-block">Enter your account handle and submit to get verified.<br>
 </div>
-<div id="code_block-301-23" class="ct-code-block"> <div class="form-container">
-        <input type="text" id="inputField" name="username" placeholder="@someaccount">
-        <button type="submit" id="submitButton" onclick="checkName()">Submit</button>
-    </div>
+<div id="code_block-301-23" class="ct-code-block">
+<form class="form-container" onsubmit="checkName(event)">
+  <input type="text" id="inputField" name="username" placeholder="@someaccount" required>
+  <span id="backgroundGradientverify"><button type="submit" id="submitButton">Submit</button></span>
+</form>
 </div>
 </div></div></section><section id="section-161-23" class=" ct-section" data-aos="fade-up"><div class="ct-section-inner-wrap">
 <div id="div_block-1032-23" class="ct-div-block">
@@ -431,7 +432,15 @@
 <h4 id="headline-288-23" class="ct-headline">Book a Free Market Making Consultation Call</h4>
 <div id="div_block-289-23" class="ct-div-block"><a id="link_button-290-23" class="ct-link-button" href="https://calendly.com/tokenpilot" target="_blank">Book A Free Session</a></div>
 </div>
-</div></section>	<!-- WP_FOOTER -->
+</div></section><div id="code_block-1080-23" class="ct-code-block">  <div id="exitPopup" class="modal">
+    <div class="modal-content">
+      <img id="alertImage" class="alertImage__Custom">
+      <p id="alertTitle"></p>
+      <p id="alertMessage"></p>
+      <button id="alertOkButton">Confirm</button>
+    </div>
+  </div>
+</div>	<!-- WP_FOOTER -->
 <script>jQuery(document).on('click','a[href*="#"]',function(t){if(jQuery(t.target).closest('.wc-tabs').length>0){return}if(jQuery(this).is('[href="#"]')||jQuery(this).is('[href="#0"]')||jQuery(this).is('[href*="replytocom"]')){return};if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var e=jQuery(this.hash);(e=e.length?e:jQuery("[name="+this.hash.slice(1)+"]")).length&&(t.preventDefault(),jQuery("html, body").animate({scrollTop:e.offset().top-150},600))}});</script><script type="text/javascript" id="ct-footer-js">jQuery('.spacey_title').attr({'data-aos-enable': 'true','data-aos': 'fade-up',});jQuery('.bento_content_block').attr({'data-aos-enable': 'true','data-aos': 'fade-up',});
 	  	AOS.init({
 	  				duration: 2000,
@@ -474,6 +483,7 @@
     left: 0%;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
+  margin:0px;
 }
 
 #mobileDropBtn {
@@ -1137,66 +1147,183 @@ scrollbar-width: none;
 }</style>
 <script type="text/javascript" id="ct_code_block_js_301">const names = ["John", "Jane", "Alice", "Bob"];   
 
-function checkName() {
+function checkName(event) {
+
+  event.preventDefault();
     const inputName = document.getElementById('inputField').value;
+    const alertMessage = document.getElementById('alertMessage');
+    const alertTitle = document.getElementById('alertTitle');
+   const alertImage = document.getElementById('alertImage');
     if (names.includes(inputName)) {
-        alert("Yes, this username exists.");
+        alertTitle.textContent = "Account Verified!";
+        alertMessage.textContent = "Your account is verified with our database. We're excited to have you with us.";
+        alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/cross.svg";
     } else {
-        alert("No, this username doesn't exist.");
+        alertTitle.textContent = "Account Not Found!";
+        alertMessage.textContent = "Your account could not be verified within out database. ";
+        alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/tick.svg";
+      
     }
-}</script>
+    showCustomAlert();
+}
+
+function showCustomAlert() {
+    document.getElementById('exitPopup').style.display = 'flex';
+}
+
+document.getElementById('alertOkButton').addEventListener('click', function() {
+    document.getElementById('exitPopup').style.display = 'none';
+});</script>
 <style type="text/css" id="ct_code_block_css_301">.form-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
+
 .form-container input {
   width: 68.9%;
 }
 
+span#backgroundGradientverify {
+
+  padding: 1px;
+  border-radius: 0.25rem;
+border: 0px solid #F0F0F0;
+background: linear-gradient(180deg, #f0efee 0%, rgba(23, 107, 135, 0) 100%);
+  background-color:#a87d22;
+}
+
 #inputField {
-height: 3.625rem;
-flex-shrink: 0;
-padding: 1rem;
+  height: 3.625rem;
+  flex-shrink: 0;
+  padding: 1rem;
 }
 
 #submitButton {
   border-radius: 0.25rem;
-border: 1px solid #F0F0F0;
-background: linear-gradient(180deg, #E3B148 0%, #A67C21 100%);
+  border: 0px solid #F0F0F0;
+  background: linear-gradient(180deg, #E3B148 0%, #A67C21 100%);
   display: inline-flex;
+  padding: 1.0625rem 3.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--rich-black, #020E18);
+  font-family: Raleway;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.5rem; /* 133.333% */
+}
+
+
+
+#submitButton:hover {
+  background-color: #e6b800;
+}
+
+@media (max-width: 992px) {
+
+  .modal-content {
+    max-width:85vw !important;
+  }
+
+  #backgroundGradientverify {
+    width:100%;
+  }
+  
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-container input {
+    width: 100%;
+  }
+
+  .form-container #submitButton {
+    width: 100%;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); /* Semi-transparent background */
+  align-content:center;
+  justify-content:center;
+align-items: center;
+  
+  
+}
+
+.modal-content {
+  border: 0px solid #0A3D4E;
+ border-radius: 0.5rem;
+background: linear-gradient(180deg, #0A3D4E -11.07%, #07212A 69.05%);
+  max-height:21.9rem;
+  max-width:25.4rem;
+   align-content:center;
+  justify-content:center;
+align-items: center;
+  display:flex;
+  flex-direction:column;
+  padding: 3rem 2.4rem 1.5rem 2.4rem;
+  
+}
+
+#alertOkButton {
+  margin-top: 1.87rem;
+  cursor: pointer;
+  display: flex;
+width: 100%;
 padding: 1.0625rem 3.5rem;
 justify-content: center;
 align-items: center;
 gap: 0.5rem;
-  cursor: pointer;
+  border-radius: 0.25rem;
+background: var(--sunglow, #FDCF6E);
   color: var(--rich-black, #020E18);
 font-family: Raleway;
-font-size: 1.125rem;
+font-size: 1rem;
 font-style: normal;
 font-weight: 800;
-line-height: 1.5rem; /* 133.333% */
+line-height: 1.5rem; /* 150% */
 }
 
-#submitButton:hover {
-    background-color: #e6b800;
+img#alertImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-@media (max-width:992px) {
-  .form-container {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-  gap: 1rem;
+p#alertTitle {
+  color: #FFF;
+text-align: center;
+font-family: Raleway;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+  margin-top:2rem;
+  margin-bottom:0.5rem;
 }
-.form-container input {
-  width: 100%;
-}
-  .form-container #submitButton {
-  width: 100%;
-}
-  
-  
+
+p#alertMessage {
+  color: #FFF;
+text-align: center;
+font-family: Raleway;
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+  margin:0;
 }</style>
 <!-- /WP_FOOTER --> 
 </body>
