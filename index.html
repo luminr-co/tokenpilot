@@ -31,8 +31,8 @@
 @font-face{font-family:Cardo;font-style:italic;font-weight:400;font-display:fallback;src:url('/tokenpilot/wp-content/themes/oxygen-is-not-a-theme/assets/fonts/cardo/cardo_italic_400.woff2') format('woff2');}
 @font-face{font-family:Cardo;font-style:normal;font-weight:700;font-display:fallback;src:url('/tokenpilot/wp-content/themes/oxygen-is-not-a-theme/assets/fonts/cardo/cardo_normal_700.woff2') format('woff2');}</style>
 <link rel="stylesheet" id="oxygen-cache-29-css" href="/tokenpilot/wp-content/uploads/oxygen/css/29.css?cache=1721578995#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721819718#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721819718#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721831494#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721831494#038;ver=6.6.1" media="all">
 <!-- END OF WP_HEAD() -->
 </head>
 <body class="home page-template-default page page-id-23 wp-embed-responsive  oxygen-body">
@@ -107,7 +107,7 @@
 </div>
 </div>
 </div>
-</div></section><div id="code_block-1078-23" class="ct-code-block"><section class="image-comparison" data-component="image-comparison-slider">
+</div></section><div id="code_block-1078-23" class="ct-code-block" data-aos="fade-up"><div id="borderGradientDiv-123"><section class="image-comparison" data-component="image-comparison-slider">
   <div class="image-comparison__slider-wrapper">
     <label for="image-comparison-range" class="image-comparison__label">Move image comparison slider</label>
     <input type="range" min="0" max="100" value="50" class="image-comparison__range" id="image-compare-range" data-image-comparison-range="">
@@ -147,7 +147,7 @@
       </figure>
     </div>
   </div>
-</section></div>
+</section></div></div>
 <section id="section-1075-23" class=" ct-section"><div class="ct-section-inner-wrap"></div></section><section id="services" class=" ct-section" data-aos="fade-up"><div class="ct-section-inner-wrap">
 <h6 id="headline-98-23" class="ct-headline spacey_title">services</h6>
 <h2 id="headline-99-23" class="ct-headline tp_h2" data-aos="fade-up">We Provide a Wide Array Of Services for Your Inevitable Growth</h2>
@@ -546,12 +546,16 @@ init(imageComparisonSlider);</script>
   max-width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-left:7.5rem;
-  padding-right:7.5rem;
+  
+ 
 }
 
 .image-comparison__slider-wrapper {
   position: relative;
+  max-height:30.3125rem;
+  border:0px solid red !important;
+border-radius: 1rem 1rem 0rem 0rem;
+  overflow:clip;
 }
 
 .image-comparison__label {
@@ -561,6 +565,7 @@ init(imageComparisonSlider);</script>
 
 .image-comparison__label,
 .image-comparison__range {
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -570,6 +575,7 @@ init(imageComparisonSlider);</script>
   margin: 0;
   padding: 0;
   background-color: transparent;
+  
   border: none;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -577,11 +583,16 @@ init(imageComparisonSlider);</script>
   outline: none;
   cursor: ew-resize;
   z-index: 20;
+
+  
 }
 
 @media (hover) {
   .image-comparison__range:hover ~ .image-comparison__slider .image-comparison__thumb {
     transform: scale(1.2);
+  background-color: rgb(23, 107, 135);
+    
+    
   }
 }
 
@@ -589,7 +600,8 @@ init(imageComparisonSlider);</script>
 .image-comparison .image-comparison__slider-wrapper .image-comparison__range:focus ~ .image-comparison__slider .image-comparison__thumb,
 .image-comparison .image-comparison__slider-wrapper .image-comparison__range--active ~ .image-comparison__slider .image-comparison__thumb {
   transform: scale(0.8);
-  background-color: rgba(0, 97, 127, 0.5);
+  background-color: rgb(23, 107, 135);
+  
 }
 
 .image-comparison__image-wrapper--overlay {
@@ -601,11 +613,13 @@ init(imageComparisonSlider);</script>
   max-height:30.3125rem;
   
   overflow: hidden;
+  
 }
 
 .image-comparison__figure {
   margin: 0;
   max-height:30.3125rem;
+  
   
 }
 .image-comparison__figure::before {
@@ -618,11 +632,15 @@ init(imageComparisonSlider);</script>
   max-height:30.3125rem;
   
   background-color: none;
+
+  
 }
 .image-comparison__figure:not(.image-comparison__figure--overlay) {
   position: relative;
   padding-top: 66.666666667%;
   max-height:30.3125rem;
+
+  
   
 }
 
@@ -640,9 +658,12 @@ init(imageComparisonSlider);</script>
   -o-object-position: 0 50%;
      object-position: 0 50%;
   overflow: hidden;
+
+  
 }
 .image-comparison__figure--overlay .image-comparison__image {
   z-index: 1;
+  
 }
 
 .image-comparison__caption {
@@ -687,14 +708,15 @@ init(imageComparisonSlider);</script>
   width: 2px;
   height: 100%;
   max-height:30.3125rem;
-  
-  background-color: #fff;
-  transition: background-color 0.3s ease-in-out;
+  background-color:#176B87;
+  transition: background-color 0.5s ease-in-out;
   z-index: 10;
+  
   
 }
 .image-comparison__range--active ~ .image-comparison__slider {
   background-color: rgba(255, 255, 255, 0);
+  
 }
 
 .image-comparison__thumb {
@@ -707,8 +729,9 @@ init(imageComparisonSlider);</script>
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0091df;
-  color: #fff;
+  background-color: rgb(23, 107, 135);
+  
+  color: rgb(23, 107, 135);
   border-radius: 50%;
   box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.5);
   transform-origin: center;
@@ -719,6 +742,7 @@ init(imageComparisonSlider);</script>
   width: 40px;
   height: 40px;
   opacity: 0;
+  
   
 }
 
@@ -736,6 +760,7 @@ init(imageComparisonSlider);</script>
 
 .image-comparison__range::-ms-fill-lower {
   background-color: transparent;
+  
 }
 
 .image-comparison__range::-ms-track {
@@ -750,6 +775,7 @@ init(imageComparisonSlider);</script>
   margin: 0;
   padding: 0;
   background-color: transparent;
+  
   color: transparent;
   outline: none;
   cursor: col-resize;
@@ -761,10 +787,28 @@ init(imageComparisonSlider);</script>
   max-height:30.3125rem;
   
   opacity: 0;
+  
 }
 
 .image-comparison__range::-ms-tooltip {
   display: none;
+  
+}
+
+#borderGradientDiv-123 {
+  width:100%;
+  max-width:74.8125rem;
+  height:100%;
+  padding:2px;
+  overflow:clip;
+  border-radius: 500px;
+  border-radius: 1rem 1rem 0rem 0rem;
+box-shadow: -5px 4px 5px 0px rgba(0, 0, 0, 0.10);
+
+
+background: linear-gradient(180deg, #176B87 19.03%, rgba(23, 107, 135, 0) 100%);
+
+
 }</style>
 <style type="text/css" id="ct_code_block_css_730">@keyframes luminr-scroll {
   to {
