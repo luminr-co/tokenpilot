@@ -35,8 +35,8 @@
 <link rel="apple-touch-icon" href="/tokenpilot/wp-content/uploads/2024/07/cropped-favicon-image-tokenpilot-180x180.png">
 <meta name="msapplication-TileImage" content="/tokenpilot/wp-content/uploads/2024/07/cropped-favicon-image-tokenpilot-270x270.png">
 <link rel="stylesheet" id="oxygen-cache-29-css" href="/tokenpilot/wp-content/uploads/oxygen/css/29.css?cache=1721578995#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721895122#038;ver=6.6.1" media="all">
-<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721895122#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-cache-23-css" href="/tokenpilot/wp-content/uploads/oxygen/css/23.css?cache=1721909560#038;ver=6.6.1" media="all">
+<link rel="stylesheet" id="oxygen-universal-styles-css" href="/tokenpilot/wp-content/uploads/oxygen/css/universal.css?cache=1721909560#038;ver=6.6.1" media="all">
 <!-- END OF WP_HEAD() -->
 </head>
 <body class="home page-template-default page page-id-23 wp-embed-responsive  oxygen-body">
@@ -1194,50 +1194,66 @@ background: linear-gradient(180deg, #176B87 19.03%, rgba(23, 107, 135, 0) 100%);
 #div_block-966-23{
 scrollbar-width: none;
 }</style>
-<script type="text/javascript" id="ct_code_block_js_301">const names = ["John", "Jane", "Alice", "Bob"];
+<script type="text/javascript" id="ct_code_block_js_301">async function checkName(event) {
+    event.preventDefault();
+    const inputName = document.getElementById('inputField').value.trim();
+    const alertMessage = document.getElementById('alertMessage');
+    const alertTitle = document.getElementById('alertTitle');
+    const alertImage = document.getElementById('alertImage');
 
-        function checkName(event) {
-            event.preventDefault();
-            const inputName = document.getElementById('inputField').value;
-            const alertMessage = document.getElementById('alertMessage');
-            const alertTitle = document.getElementById('alertTitle');
-            const alertImage = document.getElementById('alertImage');
+    try {
+        const response = await fetch('/tokenpilot/wp-content/uploads/2024/data.json');
+        const data = await response.json();
 
-            if (names.includes(inputName)) {
-                alertTitle.textContent = "Account Verified!";
-                alertMessage.textContent = "Your account is verified with our database. We're excited to have you with us.";
-                alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/cross.svg";
-            } else {
-                alertTitle.textContent = "Account Not Found!";
-                alertMessage.textContent = "Your account could not be verified within our database.";
-                alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/tick.svg";
-            }
-            showCustomAlert();
+        const nameExists = data.some(entry => 
+            (Array.isArray(entry["Full Name"]) ? entry["Full Name"].includes(inputName) : entry["Full Name"] === inputName) ||
+            (Array.isArray(entry["Telegram username"]) ? entry["Telegram username"].includes(inputName) : entry["Telegram username"] === inputName) ||
+            (Array.isArray(entry["Email Address"]) ? entry["Email Address"].includes(inputName) : entry["Email Address"] === inputName) ||
+            (Array.isArray(entry["WhatsApp Number"]) ? entry["WhatsApp Number"].includes(inputName) : entry["WhatsApp Number"] === inputName)
+        );
+
+        if (nameExists) {
+            alertTitle.textContent = "Account Verified!";
+            alertMessage.textContent = "Your account is verified with our database. We're excited to have you with us.";
+            alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/tick.svg";
+        } else {
+            alertTitle.textContent = "Account Not Found!";
+            alertMessage.textContent = "Your account could not be verified within our database.";
+            alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/cross.svg";
         }
+        showCustomAlert();
+    } catch (error) {
+        console.error("Error fetching or processing JSON data:", error);
+        alertTitle.textContent = "Error";
+        alertMessage.textContent = "There was an error verifying your account. Please try again later.";
+        alertImage.src = "/tokenpilot/wp-content/uploads/2024/07/cross.svg";
+        showCustomAlert();
+    }
+}
 
-        function showCustomAlert() {
-            const modal = document.getElementById('exitPopup');
-            modal.style.display = 'flex';
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10); // Slight delay to ensure display:flex is applied before transition
-        }
+function showCustomAlert() {
+    const modal = document.getElementById('exitPopup');
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10); // Slight delay to ensure display:flex is applied before transition
+}
 
-        document.getElementById('alertOkButton').addEventListener('click', function () {
-            const modal = document.getElementById('exitPopup');
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 1000); // Wait for transition to complete before setting display to none
-        });
+document.getElementById('alertOkButton').addEventListener('click', function () {
+    const modal = document.getElementById('exitPopup');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 1000); // Wait for transition to complete before setting display to none
+});
 
- document.getElementById('crossButton1').addEventListener('click', function () {
-            const modal = document.getElementById('exitPopup');
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 1000); // Wait for transition to complete before setting display to none
-        });</script>
+document.getElementById('crossButton1').addEventListener('click', function () {
+    const modal = document.getElementById('exitPopup');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 1000); // Wait for transition to complete before setting display to none
+});</script>
 <style type="text/css" id="ct_code_block_css_301">.form-container {
   display: flex;
   align-items: center;
