@@ -680,6 +680,11 @@ gap:1.38rem;
 }
 }
 
+@media (max-width: 479px) {
+.bento_content_block {
+}
+}
+
 .luminr-wrapper {
  position:relative;
  height:3.87263rem;
